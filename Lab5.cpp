@@ -57,7 +57,7 @@ void rotate(double angles[3], double *avg) {
 	}
 }
 
-void zoom(double dx, double dy, double dz) {
+void translate(double dx, double dy, double dz) {
 	for (size_t i = 0; i < vertex; i++)
 		coords[i][0] += dx, coords[i][1] += dy, coords[i][2] += dz;
 }
@@ -89,10 +89,10 @@ main() {
 		else if (KeyStroke == A_KEY) rotate(new double[3]{0.0, 0.1, 0.0}, avg);
 		else if (KeyStroke == Z_KEY) rotate(new double[3]{0.0, 0.0, 0.1}, avg);
 		else if (KeyStroke == X_KEY) rotate(new double[3]{0.0, 0.0, -0.1}, avg);
-		else if (KeyStroke == UP_KEY) zoom(0, -10, 0);
-		else if (KeyStroke == DOWN_KEY) zoom(0, 10, 0);
-		else if (KeyStroke == LEFT_KEY) zoom(-10, 0, 0);
-		else if (KeyStroke == RIGHT_KEY) zoom(10, 0, 0);
+		else if (KeyStroke == UP_KEY) translate(0, -10, 0);
+		else if (KeyStroke == DOWN_KEY) translate(0, 10, 0);
+		else if (KeyStroke == LEFT_KEY) translate(-10, 0, 0);
+		else if (KeyStroke == RIGHT_KEY) translate(10, 0, 0);
 		else if (KeyStroke == PLUS_KEY) scale(1.1, avg);
 		else if (KeyStroke == MINUS_KEY) scale(-1.1, avg);
 		show();
